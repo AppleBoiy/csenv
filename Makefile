@@ -28,3 +28,9 @@ clean:
 	@echo "Cleaning up..."
 	rm -rf $(DIST_DIR)
 	@echo "Clean complete"
+
+test:
+	brew uninstall csenv || true
+	brew untap appleboiy/tap/csenv || true
+	brew tap appleboiy/tap
+	brew install appleboiy/tap/csenv
