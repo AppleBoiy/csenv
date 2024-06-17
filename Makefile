@@ -43,6 +43,14 @@ test:
 	brew install appleboiy/tap/csenv
 	@echo "Test complete"
 
+
+commit:
+	@echo "Committing changes..."
+	git add .
+	git commit -m "Release $(VERSION) - $(shell date)"
+	git push
+	@echo "Changes committed"
+
 # Release target to create a new GitHub release
 release: build
 	@echo "Creating release $(VERSION)..."
